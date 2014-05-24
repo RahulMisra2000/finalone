@@ -16,7 +16,7 @@ using NorthWindApp.Models;
 // one more on github.com
 namespace NorthWindApp.Controllers
 {
-
+    // HOTFIX
     // ViewModels  (DTOs)
 
     public class FlatVM
