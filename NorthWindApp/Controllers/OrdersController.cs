@@ -18,7 +18,7 @@ namespace NorthWindApp.Controllers
 {
     // HOTFIX.....
     // ViewModels  (DTOs)
-
+    // added on github
     public class FlatVM
     {
         // orh - order header
