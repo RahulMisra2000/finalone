@@ -31,7 +31,7 @@ namespace NorthWindApp.Controllers
         public decimal UnitPrice { get; set; }
         public short Quantity { get; set; }
         public float Discount { get; set; }
-        // prd
+        // prd - product
         public string ProductName { get; set; }
     }
 
