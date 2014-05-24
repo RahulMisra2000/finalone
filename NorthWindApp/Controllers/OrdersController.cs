@@ -26,7 +26,7 @@ namespace NorthWindApp.Controllers
         public string shipcity { get; set; }
         public string companynamea { get; set; }
         public int numoflineitems { get; set; }
-        // ord
+        // ord - order detail
         public int ProductID { get; set; }
         public decimal UnitPrice { get; set; }
         public short Quantity { get; set; }
