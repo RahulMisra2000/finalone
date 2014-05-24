@@ -13,7 +13,7 @@ using NorthWindApp.Models;
 
 namespace NorthWindApp.Controllers
 {
-
+    // Flat
     public class FlatVM
     {
         // orh - order header
