@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace NorthWindApp.Controllers
 {
+    // just for fun
     public class HomeController : Controller
     {
         public ActionResult Index()
