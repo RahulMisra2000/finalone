@@ -66,7 +66,7 @@ namespace NorthWindApp.Controllers
         {
             var results = db.Orders                            // orh       
                             .Include(o => o.Order_Details)     // ord       
-                            .ToList()                          // CRITICAL
+                            .ToList()                          // CRITICAL BEFORE SELECT
                             .Select(o => o);
 
             return (Request.CreateResponse(HttpStatusCode.OK, CreateFlat(results)));
