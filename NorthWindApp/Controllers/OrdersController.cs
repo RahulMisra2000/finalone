@@ -10,16 +10,10 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using NorthWindApp.Models;
 
-// Test  [added at github.com]
-// Test
-// added on local pc
-// one more on github.com
+
 namespace NorthWindApp.Controllers
 {
-    // HOTFIX.....
-    // ViewModels  (DTOs)
-    // added on github
-    // another one
+
     public class FlatVM
     {
         // orh - order header
@@ -35,7 +29,7 @@ namespace NorthWindApp.Controllers
         // prd - product
         public string ProductName { get; set; }
     }
-    //
+
     public class OrhVM
     {
         public int orderid { get; set; }
@@ -57,11 +51,13 @@ namespace NorthWindApp.Controllers
         public string ProductName { get; set; }
         public Nullable<decimal> UnitPrice { get; set; }
     }
+    
     public class OrdersController : ApiController
     {
         private NorthwindContext db = new NorthwindContext();
 
-        // GET api/Orders
+        // GET api/Orders - Route
+        // The method name can be anything as long as it starts with Get
         public HttpResponseMessage GetHakunnah()
         {
             var results = db.Orders                            // orh       
