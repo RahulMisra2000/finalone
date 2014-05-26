@@ -23,6 +23,8 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li><a id="coors" name="coors" href=""> Web API COORS</a></li>
+                    
                 </ul>
             </div>
         </div>
@@ -38,5 +40,21 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+
+    <script>
+        // For testing COORS
+        $(function () {
+
+            $("#coors").on("click", null, null, function () {
+                $.get("https://localhost:44303/api/orders").always(function (msg) {
+                    console.log(msg);
+                });
+                return (false);
+            });
+            
+        });
+
+    </script>
 </body>
 </html>

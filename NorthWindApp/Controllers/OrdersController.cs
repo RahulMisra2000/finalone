@@ -9,6 +9,8 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using NorthWindApp.Models;
+using System.Web.Cors;
+using System.Web.Http.Cors;
 
 
 namespace NorthWindApp.Controllers
@@ -51,6 +53,7 @@ namespace NorthWindApp.Controllers
         public string ProductName { get; set; }
         public Nullable<decimal> UnitPrice { get; set; }
     }
+
     
     public class OrdersController : ApiController
     {
@@ -58,6 +61,7 @@ namespace NorthWindApp.Controllers
 
         // GET api/Orders - Route
         // The method name can be anything as long as it starts with Get
+
         public HttpResponseMessage GetHakunnah()
         {
             var results = db.Orders                            // orh       
