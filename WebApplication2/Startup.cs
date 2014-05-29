@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Owin;
+﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(WebApplication2.Startup))]
-
+[assembly: OwinStartupAttribute(typeof(WebApplication2.Startup))]
 namespace WebApplication2
 {
     public partial class Startup

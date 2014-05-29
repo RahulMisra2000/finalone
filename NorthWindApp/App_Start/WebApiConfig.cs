@@ -27,6 +27,8 @@ namespace NorthWindApp
                 new CamelCasePropertyNamesContractResolver();
 
             config.EnableCors(new EnableCorsAttribute("*","*","GET"));
+
+            
         }
     }
 }
