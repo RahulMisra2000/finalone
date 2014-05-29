@@ -12,4 +12,4 @@ namespace WebApplication2.Models
             public bool IsDone { get; set; }
             public virtual ApplicationUser User { get; set; }
        }
-}
+} 

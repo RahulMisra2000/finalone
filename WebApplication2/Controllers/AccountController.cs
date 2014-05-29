@@ -28,10 +28,12 @@ namespace WebApplication2.Controllers
             UserManager = userManager;
         }
 
+        
         public ApplicationUserManager UserManager {
             get
             {
                 return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                
             }
             private set
             {
@@ -55,6 +57,7 @@ namespace WebApplication2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
+            
             if (ModelState.IsValid)
             {
                 var user = await UserManager.FindAsync(model.Email, model.Password);

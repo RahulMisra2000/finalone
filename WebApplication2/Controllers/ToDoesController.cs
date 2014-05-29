@@ -10,18 +10,39 @@ using System.Web.Mvc;
 using WebApplication2.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace WebApplication2.Controllers
 {
     [Authorize]
     public class ToDoesController : Controller
     {
-        private ApplicationDbContext db; 
-        private UserManager<ApplicationUser> manager;
+        private ApplicationDbContext _db; 
+        private ApplicationUserManager _manager;
+
         public ToDoesController()
         {
-                db = new ApplicationDbContext();
-                manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+
+        }
+        public ToDoesController(ApplicationDbContext a, ApplicationUserManager b)
+        {
+            _db = a;
+            _manager = b;
+        }
+        public ApplicationDbContext db
+        {
+            get
+            {
+                return _db ?? HttpContext.GetOwinContext().Get<ApplicationDbContext>();
+            }
+        }
+        public ApplicationUserManager AUM
+        {
+            get
+            {
+                
+                return _manager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
         }
 
         // GET: ToDoes
@@ -59,7 +80,7 @@ namespace WebApplication2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,Description,IsDone")] ToDo toDo)
         {
-            var cuser = await manager.FindByIdAsync(User.Identity.GetUserId());
+            var cuser = await AUM.FindByIdAsync(User.Identity.GetUserId());
 
             if (ModelState.IsValid)
             {
